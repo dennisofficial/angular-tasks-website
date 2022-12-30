@@ -1,0 +1,72 @@
+<div
+	*ngIf="showAddModal"
+	class="modal"
+	tabindex="-1"
+	style="display: block !important"
+>
+	<div class="modal-dialog">
+		<form (ngSubmit)="onSubmit()">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Add new Task</h5>
+					<button
+						type="button"
+						class="btn-close"
+						(click)="onClose()"
+					></button>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">
+							Title
+						</label>
+						<input
+							type="text"
+							class="form-control"
+							id="text"
+							name="text"
+							[(ngModel)]="text"
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="exampleInputPassword1" class="form-label">
+							Day & Time
+						</label>
+						<input
+							type="text"
+							class="form-control"
+							id="day"
+							name="day"
+							[(ngModel)]="day"
+						/>
+					</div>
+					<div class="mb-3 form-check">
+						<input
+							type="checkbox"
+							class="form-check-input"
+							id="reminder"
+							name="reminder"
+							[(ngModel)]="reminder"
+						/>
+						<label class="form-check-label" for="exampleCheck1">
+							Reminder?
+						</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button
+						(click)="onClose()"
+						type="button"
+						class="btn btn-secondary"
+						data-bs-dismiss="modal"
+					>
+						Close
+					</button>
+					<button type="submit" class="btn btn-primary">
+						Submit
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
