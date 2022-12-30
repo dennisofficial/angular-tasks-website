@@ -1,0 +1,11 @@
+<div class="task-item-container" (dblclick)="onDblClick()">
+	<div class="task-item" [ngClass]="{ reminder: task.reminder }">
+		<h6>
+			{{ task.text }}
+			<button (click)="onClick(task)" class="btn btn-outline-danger">
+				<i class="bi bi-trash"></i>
+			</button>
+		</h6>
+		<p>{{ task.day }}</p>
+	</div>
+</div>
